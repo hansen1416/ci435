@@ -1,0 +1,90 @@
+/*sections------------------------------------------------------------------- */
+body {
+    background-color: #F0F0F0;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 20px;
+}
+#wrapper {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #FFF;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+main  {
+}
+article	{
+}
+aside	{
+}
+footer {
+}
+header {
+}
+.post	{
+}
+nav	{
+}
+.menu	{
+}
+/*headings------------------------------------------------------------------- */
+h1	{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #F60;
+    font-size: 36px;
+    line-height: 50px;
+}
+h2	{
+}
+h3 	{
+}
+/*grouping------------------------------------------------------------------- */
+p	{
+}
+blockquote	{
+}
+table   {
+    border: 1px dashed black;
+}
+/*lists---------------------------------------------------------------------- */
+ul	{
+}
+li	{
+}
+ol	{
+}
+dl	{
+}
+dt	{
+}
+dd	{
+}
+/*text------------------------------------------------------------------------ */
+em	{
+}
+strong	{
+}
+small	{
+}
+cite	{
+}
+time	{
+}
+/*image----------------------------------------------------------------------- */
+figure	{
+}
+figcaption	{
+}
+img	{
+}
+/*anchors--------------------------------------------------------------------- */
+a:link, a:visited, a:active	{
+	color: #0090D2;
+}
+a:hover {
+    color: #0063A6;
+    text-decoration: none;
+}
