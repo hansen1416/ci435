@@ -1,10 +1,23 @@
 /*sections------------------------------------------------------------------- */
 body {
     background-color: #F0F0F0;
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: Georgia, "Times New Roman", Times, Serif;
     color: #333;
     font-size: 16px;
     line-height: 20px;
+}
+/*this is the basic rule - mobile first*/ 
+body{
+    background-color: aqua;
+}
+        
+/*These further rules are only applied when the screen is wider.
+The wide rules are held within another set of brackets*/
+        
+@media screen and (min-width: 650px) {
+body { 
+    background-color: orange;
+    color:white}
 }
 #wrapper {
     max-width: 1000px;
@@ -28,21 +41,84 @@ header {
 }
 nav	{
 }
-.menu	{
+.menu li	{
+    list-style-type: none;
+    font-size: 18px;
+    margin-left: 0px;
+    margin-bottom: 20px;
 }
+.menu a {
+    color: #000;
+    padding: 5px;
+    margin-right: 4px;
+    text-decoration: none;
+    border: 2px solid #0090D2;
+    border-radius: 3px;
+}
+.menu a:hover {
+    background-color: #0090D2;
+    color: #FFF;
+}
+.menu ul
+{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu li
+{
+  display: block; /*display in a vertical column*/
+  margin: 0;
+}
+.menu a
+{
+  display: block;
+  padding: .7em 1.25em .7em 1.25em;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid gray;
+}
+.menu a:link { color: #fff; }
+.menu a:visited { color: #DFDFDF; }
+.menu a:focus { color: #C00; }
+.menu a:hover { color: #DFDFDF; }
+.menu a:active { color: #C00; }
 /*headings------------------------------------------------------------------- */
-h1	{
+/* h1	{
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #F60;
     font-size: 36px;
     line-height: 50px;
+} */
+h1	{
+    font-family: 'Strait', sans-serif;
+    color: #F30;
+    font-size: 3em;
+    line-height: 2em;
+}
+h3	{
+    font-family: 'Strait', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.7em;
 }
 h2	{
 }
 h3 	{
 }
 /*grouping------------------------------------------------------------------- */
-p	{
+p {
+    font-size:1.25rem;
+    line-height: 1.5;
+    margin: 10px 0 10px 0;
+    text-align: right;
+}
+p.dropcap:first-letter	{
+    float: left;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color:#F00;
+    font-size: 5em;
+    line-height: 0.2;
+    margin: 8px 5px 0 0;
 }
 blockquote	{
 }
@@ -87,4 +163,75 @@ a:link, a:visited, a:active	{
 a:hover {
     color: #0063A6;
     text-decoration: none;
+}
+.post	{
+	margin-top: 2px;
+	margin-bottom: 2px;
+	background-color: #CCC;
+}
+.fltlt {
+    float: left;
+    margin-right: 8px;
+}
+.clear {
+    clear: both;
+}
+.banner {grid-area: banner;}
+.menu {grid-area: menu;}
+nav {grid-area: nav;}
+table {grid-area: table;}
+main {grid-area: main;}
+aside {grid-area: aside;}
+footer {grid-area: footer;}
+#wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+     "banner"
+     "menu"
+     "nav"
+     "table"
+     "main"
+     "aside"
+     "footer";
+}
+@media (min-width: 50em) {
+    #wrapper {
+      grid-template-columns: 3fr 6fr;
+      grid-template-areas: 
+        "banner  banner"
+        "menu  menu"
+        "nav  table"
+        "aside  main"
+        "footer  footer";
+    }
+  }
+  @media (min-width: 60em) {
+    #wrapper {
+      grid-template-columns: 3fr 5fr 3fr;
+      grid-template-areas: 
+        "banner  banner  banner"
+        "menu  menu  menu"
+        "nav  table  aside"
+        "nav  main  aside"
+        "footer  footer  footer";
+     }
+  }
+
+  @media (min-width: 50em)
+{
+ .banner { padding: 0 0 0 3em; }
+/* Menu navigation - inline layout for wider screens */	
+ .menu { padding: 1em 0 1em 3em; }
+ .menu li
+ {
+  display: inline;
+  margin: 0 1em 0 0;
+ }
+ .menu a
+ {
+  display: inline;
+  padding: 0;
+  border-bottom: 0;
+ }
 }

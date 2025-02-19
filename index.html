@@ -3,10 +3,15 @@
 <html lang="en"><!--default language of the document content -->
 	
     <head>
-		<meta charset="utf-8"><!--character encoding for the document (Unicode) -->
-		<title>Learning journal</title><!--web page title -->
-        <link href="/css/normalize.css" rel="stylesheet">
-        <link href="/css/stylesheet.css" rel="stylesheet">
+      <meta charset="utf-8"><!--character encoding for the document (Unicode) -->
+      <title>Learning journal</title><!--web page title -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="/css/normalize.css" rel="stylesheet">
+      <link href="/css/stylesheet.css" rel="stylesheet">
+      <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+      <link href="https://fonts.googleapis.com/css2?family=Strait&display=swap" rel="stylesheet">
+      <!-- <link href="http://fonts.googleapis.com/css?family=Strait" rel="stylesheet"> -->
 	</head>
 
 <body>
@@ -15,24 +20,24 @@
 	<!--The 'wrapper' contains all the page content-->
     <a id="top"></a>
 	
-    <header><!--The main heading for the page -->
+    <header class="banner"><!--The main heading for the page -->
 		<h1>page heading</h1>
 		<h2>sub-heading</h2>
 	</header>
 	
-    <nav><!--The primary navigation for the page -->
-	<ul>
-		<li>Learning Journal</li>
-		<li><a href="tutorial.html">Tutorial</a></li>
-        <li><a href="contact.html">Contact me</a></li>
-	</ul>
+  <nav class="menu"><!--The primary navigation for the page -->
+    <ul>
+      <li>Learning Journal</li>
+      <li><a href="tutorial.html">Tutorial</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+    </ul>
 	</nav>
     
     <main><!--The main page content -->
         
         	<h2>Weekly Posts</h2>
 	
-    	<article>
+    	<article class="post">
 			<header>
                 <h3>Session 1 - Getting started</h3>
                 <p>Published on <time datetime="2021-10-08"><strong>October 8, 2021</strong></time></p>
@@ -89,7 +94,7 @@
 
             <blockquote>
 
-            <p>HTML (the Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of the core technologies for building Web pages. HTML provides the structure of the page, CSS the (visual) layout, for a variety of devices. Along with graphics and scripting, HTML and CSS are the basis of building Web pages...<p>
+            <p>HTML (the Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of the core technologies for building Web pages. HTML provides the structure of the page, CSS the (visual) layout, for a variety of devices. Along with graphics and scripting, HTML and CSS are the basis of building Web pages...</p>
 
             <footer>
 
@@ -102,13 +107,13 @@
             </blockquote>
 
             <p>In the first 3 lab tutorials I learned some of the most frequently used HTML tags and how to use them to structure text in a web page.</p>
-
+                
+            <div class="fltlt">
+                  <a href="http://www.w3.org/html/logo/" target="_blank">
+                    <img src="/images/BingWallpaper.jpg" width="30" height="30" alt="HTML5 logo">
+                  </a>
+                </div>
             <p>
-
-                <a href="http://www.w3.org/html/logo/" target="_blank">
-                
-                <img src="/images/BingWallpaper.jpg" width="30" height="30" alt="HTML5 logo"></a>
-                
                 The W3C has made an HTML5 logo that you can add to your web page. The HTML5 logo is licensed under Creative Commons Attribution 4.0 — so it is free to use.
             </p>
 
@@ -132,8 +137,8 @@
                 </ol>
             
         </aside>    
- 
-    <p><a href="#top">Go to top</a></p>
+    <p class="clear"><a href="#top">Go to top</a></p>
+    <!-- <p><a href="#top">Go to top</a></p> -->
 	<footer><!--Footer content -->
         <a href="mailto:L.Han2@uni.brighton.ac.uk">Email Jennie Harding</a>
 		<small>&copy; 2019, author.</small>
