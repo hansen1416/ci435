@@ -1,0 +1,707 @@
+/*sections------------------------------------------------------------------- */
+/*---------------------------
+Base styles for all screen widths
+----------------------------*/
+
+* {
+    box-sizing: border-box;
+  }
+  .box { 
+    border: #FFF000 1px dotted; 
+    } 
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    font-size: 100%;
+    line-height: 1.2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    line-height: 1.2em;
+    /*fallback - solid colour*/
+  
+  }
+  
+  
+  #wrapper {
+    max-width: 70em;
+    margin: 0 auto;
+  }
+  
+  /*Heading size change*/
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1;
+  }
+  
+  h1 {
+    font-size: 2.25em;
+  }
+  
+  /* 36px */
+  h2 {
+    font-size: 1.75em;
+  }
+  
+  /* 28px */
+  h3 {
+    font-size: 1.375em;
+  }
+  
+  /* 22px */
+  h4 {
+    font-size: 1.125em;
+  }
+  
+  /* 18px */
+  h5 {
+    font-size: 1em;
+  }
+  
+  /* 16px */
+  h6 {
+    font-size: .875em;
+  }
+  
+  /* 14px */
+  /*this is the basic rule - mobile first*/
+  
+  
+  p {
+    line-height: 1.5;
+  }
+  
+  small	{
+      font-size: .75em; /* 12px*/
+  }
+  
+  blockquote {
+    padding: 1em 2em 1em 2em;
+    margin: 0 0 2em 0;
+    border-left: 5px solid #eee;
+  }
+  
+  table {
+  
+    margin-right: 3em;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-top: 1px solid #ddd;
+    max-width: 35em;
+  }
+  
+  /**The nth child pseudo-class selects every odd row of the table to apply a background colour
+  *Reference - https://developer.mozilla.org/en-US/docs/Web/CSS/%3Anth-child
+  */
+  tbody tr:nth-child(odd) {
+      background-color: rgba(204, 0, 0, .1);
+  }
+  
+  th, td
+  {
+      font-size: 90%;
+      padding: .2em 1em .2em 1em;
+      border: 1px solid #ddd;
+      vertical-align: top;
+      text-align: left;
+      white-space: nowrap;
+  }
+  
+  td:empty{
+  background-image: url(/ci435/images/stripe.png);
+  /*or url(http://www.website/images/tablestripe.png)*/
+  /*These further rules are only applied when the screen is wider.
+  The wide rules are held within another set of brackets*/
+  background-repeat: repeat;
+  }
+  
+  caption	{
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 1.2em 0 .5em 0;
+      text-transform: uppercase;
+  }
+  
+  /*
+  Menu Links 
+  */
+  a	{ text-decoration: none; }
+      
+  
+  
+  
+  
+  a:link,
+  a:visited,
+  a:active {
+    color: #0a0a0a;
+  }
+  
+  a:hover {
+    color: #756d6d;
+    text-decoration: none;
+  }
+  
+  footer a:link { color: #fff; }
+  
+  
+  
+  
+  
+  
+  /*These further rules are only applied when the screen is wider.
+  The wide rules are held within another set of brackets*/
+  @media screen and (min-width: 650px) {
+    body {
+      background-color: rgb(255, 255, 255);
+      color: rgb(10, 10, 10)
+    }
+  }
+  
+  
+  /* 
+  Grid Layout
+  */
+  .banner {
+    grid-area: banner;
+  }
+  
+  .menu {
+    grid-area: menu;
+  }
+  
+  nav {
+    grid-area: nav;
+  }
+  
+  table {
+    grid-area: table;
+  }
+  
+  main {
+    grid-area: main;
+  }
+  
+  aside {
+    grid-area: aside;
+  }
+  
+  footer {
+    grid-area: footer;
+  }
+  
+  /*Grid media wrapper*/
+  
+  #wrapper {
+  
+    font-family: "Lucida Grande", Verdana, arial, sans-serif;
+    display: grid;
+    grid-gap: 1em;
+    background-color: rgb(241, 241, 241);
+    margin: 0 auto;
+    font-size: 1em;
+    max-width: 1200px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "banner"
+  
+      "menu"
+  
+      "nav"
+  
+      "table"
+  
+      "main"
+  
+      "aside"
+  
+      "footer";
+  }
+  
+  
+  
+  @media (min-width: 50em) {
+    #wrapper {
+      grid-template-columns: 3fr 6fr;
+      background-color: rgb(201, 185, 42);
+      grid-template-areas:
+        "banner  banner"
+  
+        "menu  menu"
+  
+        "nav  table"
+  
+        "aside  main"
+  
+        "footer  footer";
+  
+    }
+  
+  
+  }
+  
+  
+  @media (min-width: 60em) {
+    #wrapper {
+      background-color: rgb(71, 199, 75);
+      grid-template-columns: 3fr 6fr 3fr;
+      grid-template-areas:
+        "banner  banner  banner"
+  
+        "menu  menu  menu"
+  
+        "nav  table  aside"
+  
+        "nav  main  aside"
+  
+        "footer  footer  footer";
+    }
+  }
+  
+  @media (min-width: 80em) {
+    #wrapper {
+      background-color: rgb(206, 161, 94);
+      grid-template-columns: 3fr 7fr 3fr;
+      grid-template-areas:
+        "banner  banner  banner"
+  
+        "menu  menu  menu"
+  
+        "nav  table  aside"
+  
+        "nav  main  aside"
+  
+        "footer  footer  footer";
+    }
+  }
+  
+  /**Label and input of forms.
+  */
+  
+  label {
+    display: block;
+  }
+  
+  input {
+    display: block;
+  }
+  
+  
+  
+  /*Defines the container div for the form elements*/
+  form {
+      width: 80%;
+      background-color: #FFF;
+      padding: .7em;
+      border: 3px groove #56562C;
+      margin: 1.2em;
+  }
+  /*
+  Form elements grouped and styled as related blocks of data
+  
+  */
+  
+  fieldset {
+      border: 1px solid #56562C;
+      margin-bottom: 1.2em;
+      padding: .6em .6em .7em .6em;
+  }
+  
+  /*added emphasis for the 'required' fields*/
+  em	{
+      font-style: italic;
+      color: #C00;
+  }
+  /*Width setting for all input elements...*/
+  input {
+      width: 98%;
+      height: 2em;
+      background-color: #FFF;
+      border: 1px solid #900;
+      font-family: "Courier New", Courier, monospace;
+      padding: .1em;
+  }
+  /*...the input rule above is overridden for radio input elements*/
+  input[type="radio"] {
+      width: auto;
+      margin-right: 1em;
+      background-color: #FFF;
+      padding: .5em .5em 0 .5em;
+  }
+  /*Sets the width of the submit input element*/
+  input[type="submit"] {
+      color: #000;	
+      background-color: #FFF;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1.2em;
+      line-height: 1.25;
+      text-align: center;
+      width: auto;
+      border: 1px solid #333;
+      border-radius: 3px;
+      transition: all .2s ease-in-out;
+  }
+  
+  
+  
+  
+  
+  article img {
+    float: left;
+    padding: 2%;
+    width: 33%;
+    /*image 1/3 width of the article element*/
+    max-width: 240px;
+    /*max-width measurement should be the actual width of your image*/
+  }
+  
+  /*Core technique of fluid image control*/
+  
+  .banner-clipped {
+    overflow: hidden;
+  }
+  
+  .banner-fluid {
+    width: 100%;
+    max-width: 900px;
+    /*max-width measurement should be the actual width of your image*/
+  }
+  
+  /*image control for videos */
+  .video-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+  
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /*16:9 */
+    height: 0;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  
+  .clear {
+    clear: both;
+  }
+  
+  article {}
+  
+  
+  .post {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background-color: rgba(241, 241, 241, 0.4)
+  }
+  
+  
+  /*headings------------------------------------------------------------------- */
+  h1 {
+    font-family: 'Strait', sans-serif;
+    color: #F30;
+    font-size: 3em;
+    line-height: 2em;
+  }
+  
+  h2 {}
+  
+  h3 {
+    font-family: 'Strait', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.7em;
+  }
+  
+  
+  
+  
+  
+  /*grouping------------------------------------------------------------------- */
+  p {
+    font-size: 1.04rem;
+    line-height: 1.07;
+    margin: 0px 0 0px 0;
+    text-indent: 2em;
+    text-align: left;
+  }
+  
+  p.dropcap:first-letter {
+    float: left;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #F00;
+    font-size: 2em;
+    line-height: 0.2;
+    margin: 4px 10px 0 0;
+  }
+  
+  
+  
+  /*lists---------------------------------------------------------------------- */
+  ul {}
+  
+  li {}
+  
+  ol {}
+  
+  dl {}
+  
+  dt {}
+  
+  dd {}
+  
+  /*text------------------------------------------------------------------------ */
+  em {}
+  
+  strong {}
+  
+  small {}
+  
+  cite {}
+  
+  time {}
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  
+  .card {
+    display: flex;
+  }
+  
+  .card-content {
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #b8860b;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 1.25em 1.25em 0.3em 0;
+    padding: 1em;
+  }
+  
+  /*640 px - tablet portrait orientation - 2 columns*/
+  @media screen and (min-width: 40em) {
+    .card {
+      width: 50%;
+    }
+  }
+  
+  @media screen and (min-width: 40em) {
+    article {
+      column-count: 2;
+      column-width: 20em;
+      column-gap: 1.5em;
+      padding: 1em 2em 1em 0;
+    }
+  
+    /*Makes the heading span both columns*/
+    article h2 {
+      color: #900;
+      column-span: all;
+      /*col-span property is not supported by FireFox Grrrr*/
+    }
+  }
+  
+  
+  
+  /*Media query ends here*/
+  
+  /*960 px* - tablet landscape orientation and above - 3 columns*/
+  @media screen and (min-width: 60em) {
+    .card {
+      flex-basis: 31%;
+    }
+  }
+  
+  @media screen and (min-width: 80em) {
+    .card {
+      flex-basis: 23%;
+    }
+  }
+  
+  
+  
+  
+  /* --------------------------
+  Layout Styles - mobile first
+  ----------------------------*/
+  .banner
+  {
+      color: #fff;
+      background: #555;
+      padding: 1em 0 1em 1.25em;
+  }
+  
+  .menu
+  {
+      background: #000 ;
+      padding: 0;
+      text-transform: uppercase;
+      font-weight: bold;
+  }
+  
+  nav h3, aside h3 {
+      margin-left: .6em;
+  }
+  
+  main
+  {
+      margin: 0 1em 0 1em;
+  }
+  
+  footer
+  {
+      color: #fff;
+      background: #555;
+      padding: 1em 1.25em 1em 1.25em;
+  }
+  
+  
+  /*image----------------------------------------------------------------------- */
+  figure {}
+  
+  figcaption {}
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .media {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .media li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* -----------------------------------------------
+  Menu Navigation - vertical layout for smaller screens
+  --------------------------------------------------*/
+  
+  .menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .menu li {
+    display: block;
+    /*display in a vertical column*/
+    margin: 0;
+    list-style-type: none;
+    font-size: 18px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+  
+  }
+  
+  .menu a {
+    display: block;
+    padding: .7em 1.25em .7em 1.25em;
+    text-decoration: none;
+    border-bottom: 1px solid gray;
+    color: #0090D2;
+    padding: 5px;
+    margin-right: 4px;
+    text-decoration: none;
+    border: 2px solid #0090D2;
+    border-radius: 3px;
+  
+  }
+  
+  .menu a:link {
+    color: #fff;
+  }
+  
+  .menu a:visited {
+    color: #DFDFDF;
+  }
+  
+  .menu a:focus {
+    color: #C00;
+  }
+  
+  .menu a:hover {
+    background-color: #0090D2;
+    color: #DFDFDF;
+  }
+  
+  .menu a:active {
+    color: #C00;
+  }
+  
+  
+  
+  
+  
+  
+  
+  /*For wide screen such as tablets  desktops and laptops */
+  @media (min-width: 50em) {
+    .banner {
+      padding: 0 0 0 3em;
+    }
+  
+    /* Menu navigation - inline layout for wider screens */
+    .menu {
+      padding: 1em 0 1em 3em;
+    }
+  
+    .menu li {
+      display: inline;
+      margin: 0 1em 0 0;
+    }
+  
+    .menu a {
+      display: inline;
+      padding: 0;
+      border-bottom: 0;
+    }
+  }
+  
+  /*Mobile screen that is used to remove the time-table*/
+  @media (max-width: 35em) {
+    table {
+      display: none;
+    }
+  }
+  
+  .fltrt {
+    float: right;
+    margin-right: 0.5em;
+  }
+  
+  .fltlt {
+    float: left;
+    margin-left: 0.5em;
+  }
+  
+  .clear {
+    clear: both;
+  }
