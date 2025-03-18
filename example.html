@@ -1,0 +1,159 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+
+<title>Responsive web design - flexible images</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="../css/normalize.css" rel="stylesheet">
+
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 100%; /* 100% = 16px = 1em*/
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: #ccc;
+}
+#wrapper { 
+  width: 90%; 
+  margin: 0 auto;  
+  background-color: #fff;
+  padding: 2em;
+} 
+header	{
+	width: 98%;
+}
+article {
+	width: 98%;
+	max-width: 62.5em;
+	background-color: #eaeaea;
+	border: 1px solid #666;
+	margin-top: 1em;
+	padding: 0.4em;
+}
+h1 {
+  font-size: 2.4em;
+}
+h2 {
+  font-size: 2.0em;
+}
+p {
+  font-size: 1.2em;
+}
+.clear {
+  clear: both;
+}
+/* The Core Techniques
+================================= */
+
+.banner_clipped {
+  overflow: hidden;
+}
+.banner_fluid {
+  max-width: 100%;
+}
+article img {
+  float: left;
+  padding: 1em;
+  width: 33%;
+  max-width: 30em;
+  min-width: 18.75em;
+}
+/* Flexible video
+================================= */
+.video-wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+}
+iframe	{
+	width: 100%;
+	height: auto;
+	border: 1px solid #666;
+}
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /*16:9 aspect ratio */
+	height: 0; 
+}
+.video-container iframe {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+		<header>
+
+			<h1>Flexible images for fluid layouts</h1>
+
+			<h2>1. An image with the wrapper <code>overflow</code> property set to <code>hidden</code> </h2>
+			<div class="banner_clipped"><img src="/images/BingWallpaper.jpg" width="1000" height="250" alt="bee on a flower"></div>
+
+			<h2>2. Flexible image - <code>{max-width: 100%}</code></h2>
+			<img src="/images/BingWallpaper.jpg" class="banner_fluid" alt="bee on a flower">
+
+		</header>
+
+<article>
+
+	<h2>3. Flexible image - width 33%</h2>
+
+		<img src="/images/BingWallpaper.jpg" alt="bee">
+
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+        tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis 
+        nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel 
+        illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.</p>
+
+	<div class="clear"></div>
+
+</article>
+
+		<header>
+
+			<h1>Flexible video</h1>
+
+			<h2>1. Embedded video with a width of 100% </h2>
+            
+         </header>
+           
+           <div class="video-wrapper">
+            
+            <iframe width="560" height="315" src=https://www.youtube.com/embed/TrduBSGtkS4 allowfullscreen></iframe>
+            
+            </div>
+            
+            <header>
+            
+            <h2>2. Flexible embedded video</h2>
+            
+         </header>
+
+           <div class="video-wrapper">
+           
+			<div class="video-container">
+            
+            <iframe width="560" height="315" src=https://www.youtube.com/embed/TrduBSGtkS4 allowfullscreen></iframe>
+            
+            </div>
+            
+            </div>
+            
+
+</div>
+</body>
+</html>
+

@@ -78,11 +78,11 @@ nav	{
   text-decoration: none;
   border-bottom: 1px solid gray;
 }
-.menu a:link { color: #fff; }
+/* .menu a:link { color: #fff; }
 .menu a:visited { color: #DFDFDF; }
 .menu a:focus { color: #C00; }
 .menu a:hover { color: #DFDFDF; }
-.menu a:active { color: #C00; }
+.menu a:active { color: #C00; } */
 /*headings------------------------------------------------------------------- */
 /* h1	{
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -235,3 +235,45 @@ footer {grid-area: footer;}
   border-bottom: 0;
  }
 }
+.banner-clipped {
+    overflow: hidden;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+    display: flex; 
+  }
+  .card-content {
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #b8860b;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 1.25em 1.25em 0.3em 0;
+    padding: 1em;
+  }
+  
+  /*640 px - tablet portrait orientation - 2 columns*/
+  @media screen and (min-width: 40em){
+    .card { width: 50%; }
+  }
+  /*960 px* - tablet landscape orientation and above - 3 columns*/
+  @media screen and (min-width: 60em) {
+    .card { width: 33.33%; }
+  }
+
+  /* @media screen and (min-width: 40em){
+    article { 
+      column-count: 2;
+      column-width: 20em;
+      column-gap:1.5em;
+      padding: 1em 2em 1em 0;
+      }
+    
+    article h2	{
+      color: #900;
+      column-span: all;
+      }   
+    } */
